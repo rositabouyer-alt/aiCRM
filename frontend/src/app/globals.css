@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --accent: #ff2d78;
+  --accent-hover: #e0185e;
+  --glass: rgba(255,45,120,0.04);
+  --glass-border: rgba(255,45,120,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #050505;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,45,120,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,45,120,0.6); }
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] border border-pink-500/10 rounded-2xl backdrop-blur-sm;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:bg-white/[0.05] hover:border-pink-500/20 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-white font-medium px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 text-sm;
+  }
+
+  .btn-ghost {
+    @apply text-slate-400 hover:text-white hover:bg-white/[0.06] px-3 py-2 rounded-xl transition-all duration-200 flex items-center gap-2 text-sm;
+  }
+
+  .input-dark {
+    @apply bg-white/[0.03] border border-pink-500/10 rounded-xl px-4 py-2.5 text-white placeholder-slate-600 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-200 text-sm w-full;
+  }
+
+  .badge { @apply px-2.5 py-0.5 rounded-full text-xs font-medium; }
+  .badge-new { @apply badge bg-pink-500/15 text-pink-400 border border-pink-500/20; }
+  .badge-active { @apply badge bg-emerald-500/15 text-emerald-400 border border-emerald-500/20; }
+  .badge-qualified { @apply badge bg-violet-500/15 text-violet-400 border border-violet-500/20; }
+  .badge-booked { @apply badge bg-yellow-500/15 text-yellow-400 border border-yellow-500/20; }
+  .badge-closed { @apply badge bg-slate-500/15 text-slate-400 border border-slate-500/20; }
+
+  .sidebar-item { @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer; }
+  .sidebar-item-active { @apply sidebar-item bg-accent/10 text-accent border border-accent/20; }
+  .sidebar-item-inactive { @apply sidebar-item text-slate-500 hover:text-white hover:bg-white/[0.04]; }
+}
