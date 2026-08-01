@@ -1,29 +1,3 @@
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
-.env
-
-# Node.js
-node_modules/
-**/node_modules/
-
-# Next.js
-.next/
-out/
-
-# Build
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-
-# Logs
-*.log
-
 node_modules/
 **/node_modules/
 .next/
